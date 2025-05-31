@@ -160,7 +160,12 @@ cython_debug/
 #.idea/
 
 
-#For copyright reasons .jpg and .png can not be included$
+#For copyright reasons images can not be included
+*.jpg
+*.jpeg
+*.png
+*.JPG
+*.PNG
 
-.jpg
-.png
+#.txt files are temporarily excluded
+*.txt
