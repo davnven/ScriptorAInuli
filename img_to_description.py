@@ -4,6 +4,9 @@ from openai import OpenAI
 from check_for_key import has_key
 from instructions import prompt, model_instruction
 
+start_num: int = 0                                          #Select a starting image number
+num_of_images: int = 1                                      #Select the number of images you want to have described
+
 client = OpenAI() #gets OPENAI_API_KEY from env variable as default
 
 def set_id(num) -> str:
@@ -53,8 +56,6 @@ def img_to_description(img_path: str) -> list:
 if __name__ == "__main__":
     if not has_key():
         print("No OPENAI_API_KEY is set.")
-    start_num: int = 0                                        #int(input("Input starting number (inclusive): "))
-    num_of_images: int = 1                                      #int(input("Input number of pictures: "))
     response_path = get_response_file_path()
 
     for image in range(num_of_images):
