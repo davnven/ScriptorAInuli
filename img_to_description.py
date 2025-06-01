@@ -4,7 +4,7 @@ from openai import OpenAI
 from check_for_key import has_key
 from instructions import prompt, model_instruction
 
-start_num: int = 0                                          #Select a starting image number
+start_num: int = 0                                          #Select a starting image number 
 num_of_images: int = 1                                      #Select the number of images you want to have described
 
 client = OpenAI() #gets OPENAI_API_KEY from env variable as default
@@ -73,4 +73,4 @@ if __name__ == "__main__":
             f.write(f"Description of {id}.jpg: \n {response.output[0].content[0].text}\n")
 
         print(f"Done with {id}.jpg")
-    print(f"Done with all (from {start_num}to{start_num+num_of_images})")
+    print(f"Done with all (from {start_num} to {start_num+num_of_images-1})")
